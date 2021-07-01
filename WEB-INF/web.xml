@@ -1,0 +1,37 @@
+<web-app>
+    <servlet>
+        <servlet-name>WisdomServlet</servlet-name>
+        <servlet-class>controller.WisdomServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WisdomServlet</servlet-name>
+        <url-pattern>/WisdomController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SessionController</servlet-name>
+        <servlet-class>controller.SessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SessionController</servlet-name>
+        <url-pattern>/SessionController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>controller.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/UserController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>MyPageServlet</servlet-name>
+        <servlet-class>controller.MyPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyPageServlet</servlet-name>
+        <url-pattern>/MyPageController</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>SessionController</welcome-file>
+	</welcome-file-list>
+</web-app>

@@ -1,0 +1,1270 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+/* Common */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    font-weight: normal;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+	color: #393939;
+	background: #44617b;
+}
+
+a {
+	color: #393939;
+ 	text-decoration:none;
+}
+
+.cf:after{
+	content:".";
+	display:block;
+	clear:both;
+	height:0;
+	visibility:hidden;
+}
+
+a:hover {
+  color: #000;
+  opacity: 0.6;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+a:hover img {
+	opacity: 0.8;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img {
+  text-align: center;
+}
+
+.inner {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 10px;
+}
+
+.wideinner {
+    max-width: 1280px;
+    min-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 10px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.oswald {
+	font-family: 'Oswald', sans-serif;
+}
+
+article {
+	max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 30px 10px;
+    color: #393939;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+/* ローディング画面 */
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #eaedf7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ゲートページ */
+
+#gate article {
+	max-width: initial;
+    border-radius: 0;
+    padding: 0;
+}
+
+#gate .column2 .item {
+	width: 50%;
+	background-color: #fff;
+}
+
+#gate .oswald {
+	font-size: 140%;
+}
+
+#gate h2 {
+	color: #68699b;
+	font-size: 24px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #68699b;
+	margin-bottom: 20px;
+}
+
+#gate .column2 .imgblock {
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:cover;
+	background-size:cover;
+}
+
+#gate .upper .imgblock {
+	background-image:url(./images/gate_bg01.jpg);
+}
+
+#gate .lower .imgblock {
+	background-image:url(./images/gate_bg02.jpg);
+}
+
+#gate .column2 .textblock {
+	padding: 80px 20px;
+}
+
+#gate .lower .textblock {
+	text-align: right;
+}
+
+#gate .column2 .textblock .innerbox {
+	display: inline-block;
+	text-align: left;
+}
+
+#gate .column2 .textblock .rootBtn {
+	text-align: center;
+	margin-top: 30px;
+}
+
+#gate .column2 .textblock .rootBtn a {
+	display: inline-block;
+	background: #393f4c;
+	border-radius: 4px;
+	box-shadow: 0px 4px 0px 0px rgba(107, 107, 107, 0.6);
+	border: none;
+	color: #fff;
+	padding: 5px 20px;
+	font-size: 14x;
+	font-weight: bold;
+}
+
+#gate .column2 .textblock .rootBtn a:hover {
+	opacity: 1;
+	background: #44617b;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+#gate .column2 .textblock .rootBtn a.login {
+	background: #0073a8;
+}
+#gate .column2 .textblock .rootBtn a.login:hover {
+	background: #3dade0;
+}
+
+#gate .column2 .textblock .rootBtn a.newUser {
+	background: #d83473;
+}
+
+#gate .column2 .textblock .rootBtn a.newUser:hover {
+	background: #ff5e9c;
+}
+
+/* ログイン / 新規登録 */
+
+.sign {
+	width: 100%;
+	height: 100vh;
+	background-image:url(./images/login_bg01.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:cover;
+	background-size:cover;
+	position: relative;
+}
+
+.sign article {
+	background: none;
+	width: 1000px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.sign .logo img {
+	Max-width: 200px;
+	height: auto;
+}
+
+.sign .signbox {
+	border-radius: 10px;
+	background: rgba(255,255,255,0.6);
+	padding: 20px 10px;
+	margin: 20px auto 0;
+	max-width: 500px;
+	text-align: center;
+	box-shadow: 0px 0px 2px 2px rgb(173 173 173 / 70%);
+}
+
+.sign .signbox h1 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.sign .signbox form {
+	display: inline-block;
+}
+
+.sign .signbox .rootBtn a {
+	display: inline-block;
+	padding: 5px 15px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	background: #fff;
+	border: 1px solid #393f4c;
+	text-align: center;
+	margin: 10px auto 0
+}
+
+.sign .signbox .rootBtn a:hover {
+	background: #393f4c;
+	color: #fff;
+}
+
+.sign .signbox form table {
+	margin-bottom: 0;
+}
+
+.sign .signbox form table th,
+.sign .signbox form table td {
+	padding: 0 0 10px 10px;
+}
+
+.sign .signbox form table th {
+	font-size: 14px;
+}
+
+.sign .signbox form table td input[type="text"],
+.sign .signbox form table td input[type="email"],
+.sign .signbox form table td input[type="password"] {
+	padding: 5px 10px;
+	box-shadow: 4px 4px 4px -2px #dadada;
+	border-radius: 4px;
+	border-color: #ccc;
+}
+
+.sign .signbox form table td input[type="submit"] {
+	font-family: 'Oswald', sans-serif;
+	background: #393f4c;
+	border-radius: 4px;
+	box-shadow: 0px 4px 0px 0px rgba(107, 107, 107, 0.6);
+	border: none;
+	color: #fff;
+	padding: 5px 40px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.sign .signbox form table td input[type="submit"]:hover {
+	background: #44617b;
+	 -webkit-transition: all .3s;
+	 transition: all .3s;
+}
+
+/* ヘッダー */
+
+header {
+	padding-top: 30px;
+	border-bottom: 1px solid #fff;
+	margin-bottom: 30px;
+}
+
+header p,
+header h1 {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 24px;
+	color: #fff;
+	font-family: 'Oswald', sans-serif;
+}
+
+header a,
+header a:hover {
+	color: #fff;
+}
+
+header p .logo {
+	margin-right: 10px;
+}
+
+header .logo img {
+	width: auto;
+	height: 50px;
+}
+
+
+/* 一覧画面 */
+
+article + form {
+	max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 10px;
+	text-align: right;
+}
+
+article + form input[type="submit"] {
+	font-family: 'Oswald', sans-serif;
+	background: #e8ecef;
+	border-radius: 4px;
+	box-shadow: 0px 4px 0px 0px rgba(191, 191, 191, 0.6);
+	border: none;
+	padding: 5px 40px;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+article + form input[type="submit"]:hover {
+	background: #c8c2be;
+	 -webkit-transition: all .3s;
+	 transition: all .3s;
+}
+
+h1.balloon {
+	font-size: 24px;
+	font-weight: bold;
+	position: relative;
+	padding-left: 60px;
+	margin-bottom: 20px;
+}
+
+h1.balloon::before {
+	content:"";
+	width: 51px;
+	height: 40px;
+	background-image:url(./images/wisdom_icon02.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -25px;
+}
+
+
+h2.balloon {
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	padding-left: 50px;
+	margin-bottom: 25px;
+}
+
+h2.balloon::before {
+	content:"";
+	width: 41px;
+	height: 32px;
+	background-image:url(./images/wisdom_icon02.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -16px;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.noque {
+	margin-bottom: 30px;
+}
+
+table.list,
+table.list th,
+table.list td {
+	border: 1px solid #ccc;
+	font-size: 13px;
+}
+
+table.list th,
+table.list td {
+	padding: 5px;
+}
+
+table.list th {
+	background: #68699b;
+	color: #fff;
+}
+
+table.list tr:nth-child(2n+1) td {
+	background: #f3f3f2;
+}
+
+table.list td:nth-child(2) {
+	width: 23%;
+}
+
+table.list th.ansNum {
+	font-size: 8px;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+table.list td.ansNum {
+	width: 4em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.list td.updatedAt {
+	width: 6em;
+}
+
+table.list td.bookmark {
+	padding: 1px;
+}
+
+table.list td.bookmark_on {
+	background: #ffec47 !important;
+}
+
+table.list td.bookmark button {
+	background: none;
+	border: none;
+	outline: none
+}
+
+table.list td.bookmark button:hover {
+	opacity: 0.6;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+table.list td:nth-child(2) a {
+	font-size: 14px;
+	font-weight: bold;
+	color: #68699b;
+	text-decoration: underline;
+}
+
+table.list td:nth-child(2) a:hover {
+	text-decoration: none;
+}
+
+table.list td .cate {
+	background: #68699b;
+	color: #fff;
+	display: inline-block;
+	padding: 4px 5px 3px;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 10px;
+	margin: 0 10px 5px 0;
+	vertical-align: middle;
+	line-height: 1;
+}
+
+.cate.cateId1 {
+	background: #0073a8 !important;
+}
+
+.cate.cateId2 {
+	background: #d83473 !important;
+}
+
+.cate.cateId3 {
+	background: #68699b !important;
+}
+
+.searchBlock {
+	background: #f3f3f2;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	padding: 20px 10px;
+}
+
+.searchBlock label {
+	color: #68699b;
+	font-weight: bold;
+}
+
+.searchBlock form {
+	margin-bottom: 10px;
+}
+
+.searchBlock form:last-child {
+	margin-bottom: 0;
+}
+
+.searchBlock select {
+	padding: 5px 10px;
+    box-shadow: 4px 4px 4px -2px #dadada;
+    border-radius: 4px;
+    border: 2px solid #44617b;
+}
+
+.searchBlock input[type="text"],
+.searchBlock input[type="date"] {
+	padding: 10px;
+    box-shadow: 4px 4px 4px -2px #dadada;
+    border-radius: 4px;
+    border: 2px solid #44617b;
+}
+
+.searchBlock input[type="text"] {
+	width: 70%;
+}
+
+.searchBlock input[type="submit"] {
+	background: #68699b;
+	color: #fff;
+	font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    box-shadow: 0px 4px 0px 0px rgb(191 191 191 / 60%);
+}
+
+.searchBlock input[type="submit"]:hover {
+  opacity: 0.6;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.btn {
+	display: inline-block;
+	padding: 5px 30px 5px 20px;
+	margin: 20px 10px 0 0;
+	border-radius: 10px;
+	border: 1px solid #68699b;
+	position: relative;
+	color: #68699b;
+}
+
+.btn::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #68699b;
+    border-right: 2px solid #68699b;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+table.list td.userName {
+	text-align: center;
+	vertical-align: middle;
+}
+
+table.list td.userName .btn {
+	margin: 0;
+	padding: 5px 10px;
+	background: #fff;
+	outline: none;
+}
+
+table.list td.userName .btn:hover {
+  opacity: 0.6;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+table.list td.userName span.btn:hover {
+	opacity: 1;
+}
+
+table.list td.userName .btn::after {
+	content: none;
+	position: static;
+}
+
+/* 質問投稿 */
+
+table.post {
+	width: 100%;
+}
+
+table.post th,
+table.post td {
+	padding: 10px;
+	vertical-align: top;
+}
+
+table.post th {
+	width: 8em;
+	text-align: right;
+    font-weight: bold;
+}
+
+table.post td input[type="text"],
+table.post textarea,
+table.post td input[type="email"],
+table.post td input[type="password"] {
+	padding: 10px;
+	box-shadow: 4px 4px 4px -2px #dadada;
+	border-radius: 4px;
+	border: 2px solid #44617b;
+	width: 100%;
+}
+
+table.post textarea {
+	min-height: 100px;
+}
+
+table.post select {
+	padding: 5px 10px;
+	box-shadow: 4px 4px 4px -2px #dadada;
+	border-radius: 4px;
+	border: 2px solid #44617b;
+}
+
+table.post tr:last-child td {
+	text-align: right;
+}
+
+table.post td input[type="submit"] {
+	font-family: 'Oswald', sans-serif;
+	background: #393f4c;
+	border-radius: 4px;
+	box-shadow: 0px 4px 0px 0px rgba(107, 107, 107, 0.6);
+	border: none;
+	color: #fff;
+	padding: 5px 40px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+table.post td input[type="submit"]:hover {
+	background: #44617b;
+	 -webkit-transition: all .3s;
+	 transition: all .3s;
+}
+
+/* 質問詳細画面 */
+
+#detail .qa_icon {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-left: 40px;
+	position: relative;
+}
+
+#detail .qa_icon::before {
+	content: "";
+	width: 31px;
+	height: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-image:url(./images/wisdom_icon_que.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+}
+
+#detail .ans {
+	margin-top: 30px;
+}
+
+#detail .ans::before {
+	background-image:url(./images/wisdom_icon_ans.png);
+}
+
+#detail .pre {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+#detail .pre a {
+    color: #68699b;
+    text-decoration: underline;
+}
+
+#detail .pre a:hover {
+	text-decoration: none;
+}
+
+#detail .byname {
+	display: inline-block;
+	padding: 2px 10px;
+	background: #165e83;
+	color: #fff;
+	font-weight: bold;
+	font-size: 12px;
+	margin-left: 10px;
+	border-radius: 10px;
+	vertical-align: middle;
+}
+
+#detail .cate {
+	background: #68699b;
+	color: #fff;
+	display: inline-block;
+	padding: 4px 5px 3px;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 10px;
+	margin-left: 5px;
+	vertical-align: middle;
+	line-height: 1;
+}
+
+#detail .helpfulForm {
+	padding: 10px 0;
+	text-align: left;
+}
+
+#detail .helpful {
+	outline: none;
+	border: none;
+	display: inline-block;
+	padding: 2px 15px 2px 35px;
+	background: #fffacc;
+	color: #665f1d;
+	font-weight: bold;
+	font-size: 12px;
+	border-radius: 10px;
+	vertical-align: middle;
+	position: relative;
+}
+
+#detail .helpful:hover {
+	-moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 0, 0.8);
+	-webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 0, 0.8);
+	-ms-box-shadow: 0px 0px 15px 5px rgba(255, 255, 0, 0.8);
+	box-shadow: 0px 0px 15px 5px rgba(255, 255, 0, 0.8);
+	-webkit-transition: all .5s;
+	transition: all .2s;
+}
+
+
+#detail .helpful::before {
+	content: "";
+	width: 25px;
+	height: 25px;
+	background-image:url(./images/wisdom_icon_helpful.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	margin-top: -13px;
+}
+
+#detail .helpfulAnsMark {
+	display: inline-block;
+	color: #998e2b;
+	font-weight: bold;
+	border: 2px solid #ffec47;
+	border-radius: 5px;
+	line-height: 1;
+	font-size: 9px;
+	padding: 5px 2px 40px 4px;
+	position: relative;
+	margin: 0 0 10px 5px;
+}
+
+#detail .helpfulAnsMark::after {
+	content: "";
+	width: 34px;
+	height: 34px;
+	background-image:url(./images/wisdom_icon_helpful.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+	position: absolute;
+	bottom: 3px;
+	left: 50%;
+	margin-left: -17px;
+}
+
+#detail table tbody {
+	display: flex;
+	width: 100%;
+	flex-wrap: nowrap;
+	flex-direction: column;
+}
+
+#detail table tbody tr.bestAnsTr {
+	order: -1;
+}
+
+#detail table tr {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+#detail table td {
+	padding: 0 10px;
+	display: block;
+}
+
+#detail table td:first-child {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#detail .bestAnsForm {
+	padding: 10px;
+}
+
+#detail .bestAnsForm button {
+	color: #ff2020;
+	outline: none;
+	background: #fff;
+	display: inline-block;
+	padding: 10px 5px 10px 30px;
+	border: 1px solid #ff2020;
+	border-radius: 5px;
+	line-height: 1;
+	position: relative;
+}
+
+#detail .bestAnsForm button::before {
+	content: "";
+	width: 20px;
+	height: 20px;
+	background-image:url(./images/wisdom_icon_bestans.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	margin-top: -11px;
+}
+
+#detail .bestAnsForm button:hover {
+	background: #ff2020;
+	color: #fff;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+#detail .bestAnsForm button:hover::before {
+	background-image:url(./images/wisdom_icon_bestans_on.png);
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+#detail .bestAns label, #detail .bestAns input, #detail .bestAns img {
+	vertical-align: middle;
+}
+
+#detail .bestAnsMark {
+	display: inline-block;
+	color: #ff2020;
+	font-weight: bold;
+	border: 2px solid #ff2020;
+	border-radius: 5px;
+	line-height: 1;
+	font-size: 10px;
+	padding: 5px 5px 60px 5px;
+	position: relative;
+	margin: 0 0 10px 5px;
+}
+
+#detail .bestAnsMark::after {
+	content: "";
+	width: 50px;
+	height: 50px;
+	background-image:url(./images/wisdom_icon_bestans.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	-moz-background-size:contain;
+	background-size:contain;
+	position: absolute;
+	bottom: 5px;
+	left: 50%;
+	margin-left: -25px;
+}
+
+.bestAns input {
+	margin: 0;
+}
+
+#detail form {
+	text-align: right;
+}
+
+#detail form textarea {
+	text-align: left;
+	padding: 10px;
+	box-shadow: 4px 4px 4px -2px #dadada;
+	border-radius: 4px;
+	border: 2px solid #44617b;
+	width: 100%;
+	min-height: 100px;
+	margin-bottom: 20px;
+}
+
+#detail form input[type="submit"] {
+	font-family: 'Oswald', sans-serif;
+	background: #393f4c;
+	border-radius: 4px;
+	box-shadow: 0px 4px 0px 0px rgba(107, 107, 107, 0.6);
+	border: none;
+	color: #fff;
+	padding: 5px 40px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#detail form input[type="submit"]:hover {
+	background: #44617b;
+	 -webkit-transition: all .3s;
+	 transition: all .3s;
+}
+
+/* ユーザー情報変更・退会 */
+
+table.userData {
+	max-width: 380px;
+}
+
+table.userData th {
+	width: 10em;
+	font-size: 14px;
+}
+
+table.userData td input[type="text"],
+table.userData textarea,
+table.userData td input[type="email"],
+table.userData td input[type="password"] {
+	width: 16em;
+}
+
+.resignBtn {
+	margin-bottom: 30px;
+}
+
+.resignBtn input[type="submit"] {
+	font-family: 'Oswald', sans-serif;
+    background: #393f4c;
+    border-radius: 4px;
+    box-shadow: 0px 4px 0px 0px rgb(107 107 107 / 60%);
+    border: none;
+    color: #fff;
+    padding: 5px 40px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.resignBtn input[type="submit"]:hover {
+	background: #44617b;
+	 -webkit-transition: all .3s;
+	 transition: all .3s;
+}
+
+/* フッター */
+
+footer {
+	border-top: 1px solid #fff;
+	padding: 10px;
+}
+
+footer .copyright {
+	text-align: right;
+	color: #fff;
+	font-size: 10px;
+}
+
+.sign .copyright {
+	margin-top: 20px;
+	text-align: center;
+	color: #fff;
+	font-size: 10px;
+}
+
+
+/************************************************
+   max-width: 1000px
+************************************************ */
+
+@media only screen and (max-width: 1000px){
+
+	article,
+	.sign article {
+		width: 98%;
+	}
+
+}
+
+
+	/************************************************
+	   max-width: 768px
+	************************************************ */
+
+
+	@media only screen and (max-width: 768px){
+
+		/* ゲートページ 768px */
+
+		#gate .column2 {
+			flex-wrap: wrap;
+		}
+
+		#gate .column2 .item {
+			width: 100%;
+		}
+
+		#gate .column2 .textblock {
+			padding: 30px 10px;
+		}
+
+		#gate .column2 .imgblock {
+			height: 300px;
+		}
+
+
+		/* 一覧画面 768px */
+
+		.tablewrapper {
+			overflow-x: scroll;
+			margin-bottom: 30px;
+		}
+
+		table.list {
+			width: 700px;
+			border: 3px solid #ccc;
+			margin-bottom: 0;
+		}
+
+		table.list td:nth-child(2) {
+			width: 20%;
+		}
+
+		table.list td:nth-child(2) a {
+			font-size: 11px;
+		}
+
+		table.list td:nth-child(4) {
+			width: 30%;
+		}
+
+		table.list, table.list th, table.list td {
+			font-size: 10px;
+		}
+
+		/* 質問詳細画面 768px */
+
+		#detail table {
+			margin-left: 0;
+		}
+	}
+
+
+	/************************************************
+	   max-width: 414px
+	************************************************ */
+
+
+	@media only screen and (max-width: 414px){
+
+		/* ゲートページ 414px */
+
+		#gate h2 {
+			font-size: 18px;
+		}
+
+		#gate .mini {
+			display: none;
+		}
+
+		/* ログイン / 新規登録 414px */
+
+		.sign {
+			min-height: 680px;
+			background-position:center top;
+		}
+
+		.sign article {
+		    top: 0;
+		    left: 50%;
+		    transform: translate(-50%, 0%);
+		    -webkit-transform: translate(-50%, 0%);
+		    -ms-transform: translate(-50%, 0%);
+		}
+
+		.sign .signbox form table th,
+		.sign .signbox form table td {
+			display: block;
+			padding: 0 0 5px 0;
+		}
+
+		.sign .signbox form table td input[type="submit"] {
+			margin-top: 10px;
+		}
+
+		.sign .signbox form + a {
+			margin-top: 0;
+		}
+
+		/* 共通ヘッダー 414px */
+
+		header {
+			padding-bottom: 10px;
+		}
+		header p,
+		header h1 {
+			display: block;
+			text-align: center;
+		}
+
+		header h1 {
+			font-size: 7vw;
+		}
+
+		/* 一覧画面 414px */
+
+		h1.balloon {
+			font-size: 4.5vw;
+			padding-left: 45px;
+			margin-bottom: 20px;
+		}
+
+		h1.balloon::before {
+			width: 38px;
+			height: 30px;
+			margin-top: -15px;
+		}
+
+		h2.balloon {
+			font-size: 4vw;
+			padding-left: 35px;
+			margin-bottom: 15px;
+		}
+
+		h2.balloon::before {
+			width: 28px;
+			height: 22px;
+			margin-top: -11px;
+		}
+
+		.searchBlock .searchUpdatedAt input[type="submit"] {
+			margin-top: 10px;
+		}
+
+		/* 質問投稿 414px */
+
+		table.post th,
+		table.post td {
+			display: block;
+			width: 100%;
+			text-align: left;
+			padding: 5px;
+			font-size: 14px;
+		}
+
+		/* 質問詳細画面 414px */
+
+		#detail .qa_icon {
+			font-size: 16px;
+			padding-left: 30px;
+			margin-bottom: 10px;
+		}
+
+		#detail .qa_icon::before {
+		    width: 24px;
+		    height: 23px;
+		}
+
+		#detail table td {
+		    padding: 5px 5px 10px 5px;
+		}
+
+		#detail table td:first-child {
+		    font-size: 16px;
+		}
+
+		#detail .bestAnsForm button {
+			font-size: 12px;
+		}
+
+	}
+
+		/************************************************
+		   max-width: 360px
+		************************************************ */
+
+
+		@media only screen and (max-width: 360px){
+
+		}
